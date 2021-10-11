@@ -5,13 +5,10 @@ import { getWeather } from './../apis/OpenWeather.api'
 class SearchBar extends Component{
     constructor(props){
         super(props);
-        this.state = {
-            location: '',
-            temp: ""
-        };
-        // getWeather('New York').then((res) => {
-        //     console.log('res', res);
-        // })
+        // this.state = {
+        //     location: '',
+        //     temp: ""
+        // };
     }
 
 
@@ -19,22 +16,17 @@ class SearchBar extends Component{
         // this.setState({
         //     location: e.target.value
         // });
+        this.props.inputChange(e);
     }
 
     onFormSubmit(e){
         e.preventDefault();
-
-        getWeather(this.state.location)
-        .then((res) => {
-            this.setState({
-                temp: Math.floor((res.data.main.temp-32)*(5/9))
-            });
-        });
+        this.props.formSubmitted();
     }
 
     render(){
-        const location = this.state.location;
-        const temp = this.state.temp;
+        const location = this.props.location;
+        // const temp = 'this.state.temp';
         //e5b5fd213629b5d7a8f781438b81a9d9
         //api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
         return(
@@ -51,7 +43,6 @@ class SearchBar extends Component{
                     
                     </input>
                 </form>
-                <p>{temp}</p>
             </div>
         )
     }
