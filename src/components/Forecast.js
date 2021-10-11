@@ -4,14 +4,11 @@ import React, { Component } from 'react';
 class Forecast extends Component {
     constructor(props){
         super(props);
-        // this.state = {
-        //     location: '',
-        //     temp: ""
-        // };
     }
     render(){
         console.log(this.props)
-        const forecastItems = this.props.hourlyForecast.map((f) => {
+        const forecastItems = this.props.hourlyForecast.map((f, i) => {
+            const key = `forecast-item_${i}`
             const url = `http://openweathermap.org/img/wn/${f.weather?.[0].icon}@4x.png`
             let ampm = 'AM';
             let hour = new Date(f.dt*1000).getHours();
@@ -21,7 +18,7 @@ class Forecast extends Component {
                 ampm = 'PM';
             }
             return(
-                <div className="forecast-item">
+                <div className="forecast-item" key={key}>
                     <p className="forecast-item_hour">{hour}:00 {ampm}</p>
                     <p className="forecast-item_temp">{f.temp}</p>
                     <img src={url} alt={f.weather[0].description}/>

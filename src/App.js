@@ -16,9 +16,7 @@ class App extends Component {
           icon: "",
           hourlyForecast: []
       };
-      // getWeather('New York').then((res) => {
-      //     console.log('res', res);
-      // })
+      this.onFormSubmit();
   }
 
 

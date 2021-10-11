@@ -1,0 +1,23 @@
+.search-bar{
+    &__button, &__input{
+        background-color: white;
+        border: 1px solid #fff;
+    }
+    &__input{
+        border-left: 0px;
+        border-bottom-right-radius: 8px;    
+        border-top-right-radius: 8px; 
+        height: 25px;
+        margin-left: 5px;
+        flex-grow: 1;
+    }
+    &__button{
+        border-right: 0px;
+        border-bottom-left-radius: 8px;    
+        border-top-left-radius: 8px; 
+        height: 29px;
+    }
+    &__form{
+        display: flex;
+    }
+}
