@@ -6,13 +6,22 @@
     margin-top: 25px;
     border: 7px;
 
-    &__title{
+    &__dayforecast{
+        padding: 15px;
+        width: 97%;
+        border-radius: 7px;
+        background-color: #CEDEFF;
+        margin-top: 25px;
+        border: 7px;
+    }
+
+    &__title,&__dayforecast__title{
         color: #282c34;
         text-align: left;
         margin-top: 7px;
         margin-bottom: 7px;
     }
-    &__items{
+    &__items,&__dayforecast__items{
         display: flex;
         color: #282c34;
         overflow-x: scroll;

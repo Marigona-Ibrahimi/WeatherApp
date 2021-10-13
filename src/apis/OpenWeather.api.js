@@ -6,13 +6,13 @@ axios.defaults.baseURL = 'http://api.openweathermap.org/data/2.5/';
 
 function getWeather(location){
     return axios.get(
-        `${baseUrl}weather?q=${location}&units=imperial&appid=${API_KEY}`
+        `${baseUrl}weather?q=${location}&units=metric&cnt=5&appid=${API_KEY}`
     );
 }
 
 function getForecast(lat, lon){
     return axios.get(
-        `${baseUrl}onecall?lat=${lat}&lon=${lon}&exclude={part}&appid=${API_KEY}`
+        `${baseUrl}onecall?lat=${lat}&lon=${lon}&exclude={part}&units=metric&cnt=5&appid=${API_KEY}`
     );
 }
 

@@ -39,17 +39,18 @@ class App extends Component {
       const lon = weatherRes.data.coord.lon;
       const forecastRes = await getForecast(lat, lon);
       console.log('weather Res', weatherRes);
+      console.log('forecastRes', forecastRes)
 
       getWeather(this.state.location).then((res) => {
         const lat = res.data.coord.lat;
         const lon = res.data.coord.lon;
-        const hourly = res
+        console.log('res', res)
         this.setState({
-            name: res.data.location,
-            temp: Math.floor((res.data.main.temp-32)*(5/9)),
-            tempMin: Math.floor((res.data.main.temp_min-32)*(5/9)),
-            tempMax: Math.floor((res.data.main.temp_max-32)*(5/9)),
-            feelsLike: Math.floor((res.data.main.feels_like-32)*(5/9)),
+            name: res.data.name,
+            temp: Math.floor(res.data.main.temp),
+            tempMin: Math.floor(res.data.main.temp_min),
+            tempMax: Math.floor(res.data.main.temp_max),
+            feelsLike: Math.floor(res.data.main.feels_like),
             humidity: res.data.main.humidity,
             windSpeed: res.data.wind.speed,
             pressure: res.data.main.pressure,
@@ -57,6 +58,10 @@ class App extends Component {
             icon: res.data.weather[0].icon,
             dailyForecast: forecastRes.data.daily,
             hourlyForecast: forecastRes.data.hourly,
+            // Math.floor((res.data.main.temp-32)*(5/9))
+            // Math.floor((res.data.main.temp_min-32)*(5/9))
+            // Math.floor((res.data.main.temp_max-32)*(5/9))
+            // Math.floor((res.data.main.feels_like-32)*(5/9))
         });
       });
   }
@@ -69,6 +74,7 @@ class App extends Component {
             inputChange={(e) => this.onInputChange(e)}
             formSubmitted={() => this.onFormSubmit()}/>
           <Weather 
+            name={this.state.name}
             currentTemperature={this.state.temp}
             minTemperature={this.state.tempMin}
             maxTemperature={this.state.tempMax}
@@ -78,7 +84,8 @@ class App extends Component {
             pressure={this.state.pressure}
             description={this.state.description}
             icon={this.state.icon}/>
-          <Forecast 
+          <Forecast  
+            dailyForecast={this.state.dailyForecast}
             hourlyForecast={this.state.hourlyForecast}
           />
         </header>

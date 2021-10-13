@@ -16,7 +16,9 @@ class Weather extends Component {
             );
         }
         return(
+            
             <div className="current-weather">
+                <p className="current-weather__name">{this.props.name}</p>
                 <div className="current-weather__content">
                     <div className="current-weather__text">
                         <p className="current-weather__temp">{this.props.currentTemperature} °C</p>
@@ -30,8 +32,8 @@ class Weather extends Component {
                 </div>
                 <div className="current-weather__basic"> 
                     <p className="current-weather__feels">Feels Like: {this.props.feelsLike} °C</p>
-                    <p>Humidity: {this.props.humidity}</p>
-                    <p>Wind Speed: {this.props.windSpeed}</p>
+                    <p>Humidity: {this.props.humidity} %</p>
+                    <p>Wind Speed: {this.props.windSpeed} %</p>
                     <p>Pressure: {this.props.pressure}</p>
                 </div>
             </div>   

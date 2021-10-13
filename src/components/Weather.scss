@@ -6,9 +6,13 @@
     display: flex;
     padding: 10px;
     justify-content: center;
+    &__name{
+        
+    }
     &__content{
         // display: flex;
         align-items: center;
+        margin-left: 25px;
     }
     &__text{
         font-size: 20px;
