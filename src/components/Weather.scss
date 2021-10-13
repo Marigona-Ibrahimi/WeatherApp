@@ -3,8 +3,9 @@
     border-radius: 7px;
     width: 60%;
     margin-top: 25px;
-    // display: flex;
+    display: flex;
     padding: 10px;
+    justify-content: center;
     &__content{
         // display: flex;
         align-items: center;
@@ -26,7 +27,9 @@
     &__icon{
         width: 150px;
     }
-    &__feels{
-
+    &__basic{
+        display: flex-root;
+        font-size: 20px;
+        margin-left: 25px;
     }
 }

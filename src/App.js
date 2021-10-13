@@ -45,6 +45,7 @@ class App extends Component {
         const lon = res.data.coord.lon;
         const hourly = res
         this.setState({
+            name: res.data.location,
             temp: Math.floor((res.data.main.temp-32)*(5/9)),
             tempMin: Math.floor((res.data.main.temp_min-32)*(5/9)),
             tempMax: Math.floor((res.data.main.temp_max-32)*(5/9)),

@@ -28,11 +28,8 @@ class Weather extends Component {
                     </div>
                     {img}
                 </div>
-                <div>
-                    Feels Like
-                    <p className="current-weather__feels">{this.props.feelsLike} °C</p>
-                </div>
-                <div>
+                <div className="current-weather__basic"> 
+                    <p className="current-weather__feels">Feels Like: {this.props.feelsLike} °C</p>
                     <p>Humidity: {this.props.humidity}</p>
                     <p>Wind Speed: {this.props.windSpeed}</p>
                     <p>Pressure: {this.props.pressure}</p>
