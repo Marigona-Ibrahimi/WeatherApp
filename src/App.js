@@ -19,12 +19,11 @@ class App extends Component {
           pressure: "",
           description: "",
           icon: "",
+          hourlyForecast: [],
           dailyForecast: [],
-          hourlyForecast: []
       };
       this.onFormSubmit();
   }
-
 
   onInputChange(e){
       this.setState({
@@ -56,8 +55,8 @@ class App extends Component {
             pressure: res.data.main.pressure,
             description: res.data.weather[0].main,
             icon: res.data.weather[0].icon,
-            dailyForecast: forecastRes.data.daily,
             hourlyForecast: forecastRes.data.hourly,
+            dailyForecast: forecastRes.data.daily,
             // Math.floor((res.data.main.temp-32)*(5/9))
             // Math.floor((res.data.main.temp_min-32)*(5/9))
             // Math.floor((res.data.main.temp_max-32)*(5/9))
@@ -85,8 +84,8 @@ class App extends Component {
             description={this.state.description}
             icon={this.state.icon}/>
           <Forecast  
-            dailyForecast={this.state.dailyForecast}
             hourlyForecast={this.state.hourlyForecast}
+            dailyForecast={this.state.dailyForecast}
           />
         </header>
       </div>
