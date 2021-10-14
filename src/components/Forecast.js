@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { isFunction } from 'util';
 import './Forecast.scss';
 
+
 class Forecast extends Component {
     constructor(props){
         super(props);

@@ -3,7 +3,35 @@ import React, {Component} from 'react';
 import SearchBar from './components/SearchBar';
 import Weather from './components/Weather';
 import Forecast from './components/Forecast';
+import Nav from './components/Nav';
 import { getForecast, getWeather } from './apis/OpenWeather.api';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+
+
+// function App(){
+//   return(
+//     <Router>
+//       <div className="App">
+//         {/* <SearchBar 
+//           location={this.state.location}
+//           inputChange={(e) => this.onInputChange(e)}
+//           formSubmitted={() => this.onFormSubmit()}
+//         /> */}
+//         <Switch>
+//           <Nav />
+//           <Route 
+//             path="/" 
+//             component={Home}
+//           />
+//           <Route 
+//             path="/forecast"
+//             component={Forecast}
+//           />
+//         </Switch>
+//       </div>
+//     </Router>
+//   );
+// }
 
 class App extends Component {
   constructor(props){
@@ -57,38 +85,59 @@ class App extends Component {
             icon: res.data.weather[0].icon,
             hourlyForecast: forecastRes.data.hourly,
             dailyForecast: forecastRes.data.daily,
-            // Math.floor((res.data.main.temp-32)*(5/9))
-            // Math.floor((res.data.main.temp_min-32)*(5/9))
-            // Math.floor((res.data.main.temp_max-32)*(5/9))
-            // Math.floor((res.data.main.feels_like-32)*(5/9))
         });
       });
   }
   render(){
     return (
-      <div className="App">
-        <header className="App-header">
-          <SearchBar 
-            location={this.state.location}
-            inputChange={(e) => this.onInputChange(e)}
-            formSubmitted={() => this.onFormSubmit()}/>
-          <Weather 
-            name={this.state.name}
-            currentTemperature={this.state.temp}
-            minTemperature={this.state.tempMin}
-            maxTemperature={this.state.tempMax}
-            feelsLike={this.state.feelsLike}
-            humidity={this.state.humidity}
-            windSpeed={this.state.windSpeed}
-            pressure={this.state.pressure}
-            description={this.state.description}
-            icon={this.state.icon}/>
-          <Forecast  
-            hourlyForecast={this.state.hourlyForecast}
-            dailyForecast={this.state.dailyForecast}
-          />
-        </header>
-      </div>
+      <Router>
+        <div className="App">
+          <header className="App-header">
+            <SearchBar 
+              location={this.state.location}
+              inputChange={(e) => this.onInputChange(e)}
+              formSubmitted={() => this.onFormSubmit()}/>
+            <Nav/>
+            {/* <Route 
+              path="/" 
+              component={Weather}
+              name={this.state.name}
+              currentTemperature={this.state.temp}
+              minTemperature={this.state.tempMin}
+              maxTemperature={this.state.tempMax}
+              feelsLike={this.state.feelsLike}
+              humidity={this.state.humidity}
+              windSpeed={this.state.windSpeed}
+              pressure={this.state.pressure}
+              description={this.state.description}
+              icon={this.state.icon}
+          
+            /> */}
+            <Route 
+              path="/forecast"
+              component={Forecast}
+              hourlyForecast={this.state.hourlyForecast}
+              dailyForecast={this.state.dailyForecast}
+            />
+            <Weather 
+              name={this.state.name}
+              currentTemperature={this.state.temp}
+              minTemperature={this.state.tempMin}
+              maxTemperature={this.state.tempMax}
+              feelsLike={this.state.feelsLike}
+              humidity={this.state.humidity}
+              windSpeed={this.state.windSpeed}
+              pressure={this.state.pressure}
+              description={this.state.description}
+              icon={this.state.icon}
+            />
+            <Forecast  
+              hourlyForecast={this.state.hourlyForecast}
+              dailyForecast={this.state.dailyForecast}
+            />
+          </header>
+        </div>
+      </Router>
     );
   }
 }
