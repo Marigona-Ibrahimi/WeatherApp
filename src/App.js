@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import './App.scss';
 import { BrowserRouter as Router, NavLink } from 'react-router-dom';
 import Route from 'react-router-dom/Route';
 import { getForecast, getWeather } from './apis/OpenWeather.api';
