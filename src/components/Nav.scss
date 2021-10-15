@@ -1,21 +1,39 @@
-nav{
+nav, ul{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    min-height: 10vh;
+    min-height: 2vh;
     background: white;
     color: #282c34;
-    margin-top: 25px;
-    width: 60%;
+    width: 68%;
+    float: left;
     border-radius: 7px;
+    list-style-type: none;
+    height: 60px;
+    h3{
+        font-size: smaller;
+        padding: 3px;
+    }
 }
 .list{
     display: flex;
     justify-content: space-around;
     align-items: center;
+    font-size: smaller;
     &-element1, &-element2{
         display: inline;
         margin-right: 15px;
         list-style-type: none;
+        text-decoration: none;
+        color: black;
+        padding: 7px;
+        font-size: smaller;
+        // height: 70px;
+    }
+    &-element1:hover,&-element2:hover{
+        color:white;
+        background: #282c34;
+        border-radius: 7px;
+        padding: 7px;
     }
 }

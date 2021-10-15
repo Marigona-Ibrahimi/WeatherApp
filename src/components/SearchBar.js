@@ -23,9 +23,6 @@ class SearchBar extends Component{
         return(
             <div className="search-bar">
                 <form className="search-bar__form" onSubmit={(e) => this.onFormSubmit(e) }>
-                    <button className="search-bar__button" type="submit">
-                        Search
-                    </button>
                     <input 
                         id="search" 
                         name="search" 
@@ -33,6 +30,9 @@ class SearchBar extends Component{
                         className="search-bar__input"
                         onChange={e => this.onInputChange(e)}>                  
                     </input>
+                    <button className="search-bar__button" type="submit">
+                        Search
+                    </button>
                 </form>
             </div>
         )

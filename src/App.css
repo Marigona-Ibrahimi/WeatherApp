@@ -1,6 +1,5 @@
 .App {
   text-align: center;
-  // margin: 15px;
 }
 
 .App-logo {
@@ -23,7 +22,10 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-  padding: 15px;
+}
+
+.divdiv{
+  width: 80%;
 }
 
 .App-link {

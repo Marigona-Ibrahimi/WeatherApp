@@ -1,40 +1,16 @@
-import './App.scss';
-import React, {Component} from 'react';
+import React, { Component } from 'react';
+import './App.css';
+import { BrowserRouter as Router, NavLink } from 'react-router-dom';
+import Route from 'react-router-dom/Route';
+import { getForecast, getWeather } from './apis/OpenWeather.api';
 import SearchBar from './components/SearchBar';
 import Weather from './components/Weather';
-import Forecast from './components/Forecast';
+import DailyForecast from './components/DailyForecast';
+import HourlyForecast from './components/HourlyForecast';
 import Nav from './components/Nav';
-import { getForecast, getWeather } from './apis/OpenWeather.api';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
-
-// function App(){
-//   return(
-//     <Router>
-//       <div className="App">
-//         {/* <SearchBar 
-//           location={this.state.location}
-//           inputChange={(e) => this.onInputChange(e)}
-//           formSubmitted={() => this.onFormSubmit()}
-//         /> */}
-//         <Switch>
-//           <Nav />
-//           <Route 
-//             path="/" 
-//             component={Home}
-//           />
-//           <Route 
-//             path="/forecast"
-//             component={Forecast}
-//           />
-//         </Switch>
-//       </div>
-//     </Router>
-//   );
-// }
-
-class App extends Component {
-  constructor(props){
+class App extends Component{
+    constructor(props){
       super(props);
       this.state = {
           location: "",
@@ -88,52 +64,51 @@ class App extends Component {
         });
       });
   }
+
   render(){
-    return (
+    return(
       <Router>
         <div className="App">
           <header className="App-header">
-            <SearchBar 
-              location={this.state.location}
-              inputChange={(e) => this.onInputChange(e)}
-              formSubmitted={() => this.onFormSubmit()}/>
-            <Nav/>
-            {/* <Route 
-              path="/" 
-              component={Weather}
-              name={this.state.name}
-              currentTemperature={this.state.temp}
-              minTemperature={this.state.tempMin}
-              maxTemperature={this.state.tempMax}
-              feelsLike={this.state.feelsLike}
-              humidity={this.state.humidity}
-              windSpeed={this.state.windSpeed}
-              pressure={this.state.pressure}
-              description={this.state.description}
-              icon={this.state.icon}
-          
-            /> */}
-            <Route 
-              path="/forecast"
-              component={Forecast}
-              hourlyForecast={this.state.hourlyForecast}
-              dailyForecast={this.state.dailyForecast}
+            <div className="divdiv">
+              <Nav/>
+              <SearchBar 
+                location={this.state.location}
+                inputChange={(e) => this.onInputChange(e)}
+                formSubmitted={() => this.onFormSubmit()}
+              />
+            </div>
+            <Route exact path="/" 
+              render={(props) => (
+                <Weather 
+                  name={this.state.name}
+                  currentTemperature={this.state.temp}
+                  minTemperature={this.state.tempMin}
+                  maxTemperature={this.state.tempMax}
+                  feelsLike={this.state.feelsLike}
+                  humidity={this.state.humidity}
+                  windSpeed={this.state.windSpeed}
+                  pressure={this.state.pressure}
+                  description={this.state.description}
+                  icon={this.state.icon}
+                />
+              )}
             />
-            <Weather 
-              name={this.state.name}
-              currentTemperature={this.state.temp}
-              minTemperature={this.state.tempMin}
-              maxTemperature={this.state.tempMax}
-              feelsLike={this.state.feelsLike}
-              humidity={this.state.humidity}
-              windSpeed={this.state.windSpeed}
-              pressure={this.state.pressure}
-              description={this.state.description}
-              icon={this.state.icon}
+            <Route path="/dailyforecast" 
+              render={(props) => (            
+                <DailyForecast 
+                  hourlyForecast={this.state.hourlyForecast}
+                  dailyForecast={this.state.dailyForecast}
+                />
+              )}
             />
-            <Forecast  
-              hourlyForecast={this.state.hourlyForecast}
-              dailyForecast={this.state.dailyForecast}
+            <Route path="/hourlyforecast" 
+              render={(props) => (            
+                <HourlyForecast 
+                  hourlyForecast={this.state.hourlyForecast}
+                  dailyForecast={this.state.dailyForecast}
+                />
+              )}
             />
           </header>
         </div>

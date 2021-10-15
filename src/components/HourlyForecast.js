@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { isFunction } from 'util';
-import './Forecast.scss';
+import './HourlyForecast.scss';
 
 
 class Forecast extends Component {
@@ -58,10 +58,10 @@ class Forecast extends Component {
                         {forecastItems}
                         </div>
                     </div>
-                    <h3 className="forecast__dayforecast__title">Daily Forecast</h3>
+                    {/* <h3 className="forecast__dayforecast__title">Daily Forecast</h3>
                     <div className="forecast__dayforecast__items">
                         {dailyforecastItems}
-                    </div>
+                    </div> */}
                     <div>
                         
                     </div>

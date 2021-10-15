@@ -1,24 +1,26 @@
 .search-bar{
-    width: 60%;
+    width: 30%;
+    float: right;
+    min-height: 2vh;
     &__button, &__input{
         background-color: white;
         border: 1px solid #fff;
     }
     &__input{
-        border-left: 0px;
-        border-bottom-right-radius: 8px;    
-        border-top-right-radius: 8px; 
-        height: 35px;
-        margin-left: 5px;
+        border-right: 0px;
+        border-bottom-left-radius: 8px;    
+        border-top-left-radius: 8px; 
+        height: 56px;
+        margin-right: 5px;
         flex-grow: 1;
         width: 65%;
         background-color: white;
     }
     &__button{
-        border-right: 0px;
-        border-bottom-left-radius: 8px;    
-        border-top-left-radius: 8px; 
-        height: 39px;
+        border-left: 0px;
+        border-bottom-right-radius: 8px;    
+        border-top-right-radius: 8px; 
+        height: 60px;
         width: 35%;
         background-color: white;
     }
