@@ -11,8 +11,6 @@ class Forecast extends Component {
 
     
     render(){
-        const list = ['Today', 'Tomorrow', 'After 2 days', 'After 3 days', 'After 4 days', 'After 4 days','After 5 days', 'After 6 days'];
-
         console.log(this.props)
         const dailyforecastItems = this.props.dailyForecast.map((f, i) => {
             console.log('aaaaaaaaa', f)
@@ -27,8 +25,7 @@ class Forecast extends Component {
 
             return(
                 <div className="forecast__item" key={key}>
-                    {/* <p className="forecast__day">{moment(f.dt).format("dddd")} </p> */}
-                    <p className="forecast__day">{list[i]} </p>
+                    <p className="forecast__day">{moment.unix(f.dt).format("dddd")} </p> 
                     <p className="forecast__temp">{Math.floor(f.temp.day)} °C</p>
                     <p className="forecast__min">Min: {Math.floor(f.temp.min)} °C</p>
                     <p className="forecast__max">Max: {Math.floor(f.temp.max)} °C</p>
