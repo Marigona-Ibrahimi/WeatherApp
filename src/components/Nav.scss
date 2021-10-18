@@ -17,7 +17,7 @@ nav, ul{
 }
 .list{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     font-size: large;
     &-element1, &-element2{
