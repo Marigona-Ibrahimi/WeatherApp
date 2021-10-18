@@ -19,7 +19,7 @@ nav, ul{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    font-size: large;
+    font-size: medium;
     &-element1, &-element2{
         display: inline;
         margin-right: 15px;
@@ -27,7 +27,7 @@ nav, ul{
         text-decoration: none;
         color: black;
         padding: 7px;
-        font-size: large;
+        font-size: medium;
         // height: 70px;
     }
     &-element1:hover,&-element2:hover{
