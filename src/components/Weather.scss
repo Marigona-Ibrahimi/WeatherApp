@@ -1,21 +1,22 @@
 .current-weather{
     background-color: #7D8CAC;
     border-radius: 7px;
-    width: 70%;
+    width: 75%;
     margin-top: 25px;
     display: flex;
     padding: 10px;
     justify-content: center;
+    font-size: large;
     &__name{
         
     }
     &__content{
         // display: flex;
         align-items: center;
-        margin-left: 25px;
+        margin-left: 15px;
     }
     &__text{
-        font-size: 20px;
+        // font-size: 20px;
         margin: 0;
         &__temp{
             font-size: 14px;
@@ -23,12 +24,12 @@
                 display: flex;
                 width: 100%;
                &__mintemp,&__maxtemp{
-                   font-size: 18px;
+                //    font-size: 18px;
                }
             }
         }
         &__description{
-            font-size: 18px;
+            // font-size: 18px;
         }
     }
     &__icon{
@@ -36,7 +37,7 @@
     }
     &__basic{
         display: flex-root;
-        font-size: 20px;
-        margin-left: 25px;
+        // font-size: 20px;
+        margin-left: 15px;
     }
 }
