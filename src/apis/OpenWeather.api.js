@@ -4,6 +4,7 @@ const API_KEY = "e5b5fd213629b5d7a8f781438b81a9d9";
 const baseUrl = 'http://api.openweathermap.org/data/2.5/';
 axios.defaults.baseURL = 'http://api.openweathermap.org/data/2.5/';
 
+
 function getWeather(location){
     return axios.get(
         `${baseUrl}weather?q=${location}&units=metric&cnt=5&appid=${API_KEY}`
@@ -13,6 +14,7 @@ function getWeather(location){
 function getForecast(lat, lon){
     return axios.get(
         `${baseUrl}onecall?lat=${lat}&lon=${lon}&exclude={part}&units=metric&cnt=5&appid=${API_KEY}`
+        // `http://pro.openweathermap.org/data/2.5/forecast/hourly?lat=${lat}&lon=${lon}&appid=${API_KEY}`
     );
 }
 

@@ -25,6 +25,7 @@ class App extends Component{
           icon: "",
           hourlyForecast: [],
           dailyForecast: [],
+          day: ""
       };
       this.onFormSubmit();
   }
@@ -43,6 +44,7 @@ class App extends Component{
       const forecastRes = await getForecast(lat, lon);
       console.log('weather Res', weatherRes);
       console.log('forecastRes', forecastRes)
+      
 
       getWeather(this.state.location).then((res) => {
         const lat = res.data.coord.lat;

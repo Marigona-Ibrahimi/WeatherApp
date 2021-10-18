@@ -13,6 +13,28 @@
   }
 }
 
+@media (max-width: 660px){
+  .divdiv{
+    nav{
+      width: 100%;
+    }
+    .search-bar{
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-top: 25px;
+    }
+    h3{
+      font-size: smaller;
+      display: flex;
+      justify-content: center;
+    }
+    .list{
+      width: 100%;
+    }
+  }
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
